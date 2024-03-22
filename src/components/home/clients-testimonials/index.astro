@@ -1,0 +1,43 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import TestimonialCard from "@/components/home/clients-testimonials/card/index.astro"
+
+const data = Array(3).fill({
+
+    client_name: "Marci Wiersma",
+    client_designation: "Broker – About Roatan Real Estate",
+    title: "“They do everything they say…no BS”",
+    description: "“Thrive is a much needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.”",
+    cover:"/hardcoded/marci.webp"
+
+})
+
+---
+<Container>
+    <section class="space-y-10 py-10">
+        <h2 class="text-5xl text-thrive_black font-proxima_nova font-light text-center">What Our <span class="font-extrabold">Clients Are Saying</span></h2>
+        <div class="grid grid-cols-3 gap-8">
+            {
+
+                data.map( ( value ) => {
+
+                    return(
+                        <TestimonialCard
+                            client_designation={ value.client_designation }
+                            client_name={ value.client_name }
+                            description={ value.description }
+                            source={ value.cover }
+                            title={ value.title }
+                        />
+                    )
+
+                })
+
+            }
+        </div>
+    </section>
+</Container>
