@@ -56,7 +56,8 @@ module.exports = {
 				"thrive_green": "#698237",
 				"thrive_dark_green": "#556c25",
 				"thrive_orange": "#db7803",
-				"thrive_yellow": "#f5d74f"
+				"thrive_yellow": "#f5d74f",
+				"thrive_light_gray": "#b1b4ae"
 
 			},
 			fontFamily: {
