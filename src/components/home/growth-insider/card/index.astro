@@ -16,7 +16,9 @@ const {
 
 ---
 <div class="bg-white p-8">
-    <h5 class="text-thrive_dark_green font-bold font-proxima_nova">{ title }</h5>
+    <Link href={ button_link } aria_label={ button_text }>
+        <h5 class="text-thrive_dark_green hover:text-black font-bold font-proxima_nova">{ title }</h5>
+    </Link>
     <div class="pt-2">
         <span class="text-thrive_black font-proxima_nova uppercase">{ date }</span>
         <p class="text-thrive_black font-proxima_nova">{ description }</p>

@@ -56,6 +56,7 @@ module.exports = {
 				"thrive_green": "#698237",
 				"thrive_dark_green": "#556c25",
 				"thrive_orange": "#db7803",
+				"thrive_dark_orange": '#b96200',
 				"thrive_yellow": "#f5d74f",
 				"thrive_light_gray": "#b1b4ae",
 				"thrive_light_green": "#e3e4d9"
