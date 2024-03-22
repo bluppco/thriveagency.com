@@ -45,8 +45,16 @@ module.exports = {
         		"accordion-up": "accordion-up 0.2s ease-out",
 
 			},
+			screens: {
+
+        		"mac": "1440px",
+
+      		},
 			colors: {
 
+				"thrive_black": "#443f35",
+				"thrive_green": "#698237",
+				"thrive_orange": "#db7803"
 
 			},
 			fontFamily: {
