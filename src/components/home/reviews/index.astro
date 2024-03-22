@@ -1,0 +1,49 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+const data = Array(3).fill({
+
+    cover: "/hardcoded/google-reviews-stats-new.svg",
+    rating: "150"
+
+})
+
+---
+<section class="bg-thrive_dark_green py-6 md:px-72 2xl:px-96">
+    <Container>
+        <section class="flex gap-4 items-center justify-between">
+            {
+
+                data.map( ( value ) => {
+
+                    return(
+                        <div class="flex flex-col">
+                            <div class="h-12 w-full">
+                                <PictureInternalContain
+                                    alternative_text=""
+                                    source={ value.cover }
+                                />
+                            </div>
+                            <div class="h-5 w-full">
+                                <PictureInternalContain
+                                    alternative_text=""
+                                    source="/images/social-review-item-new.svg"
+                                />
+                            </div>
+                            <div class="flex justify-center pt-2">
+                                <span class="font-proxima_nova font-extrabold text-thrive_yellow tracking-wider">{ value.rating }+ Reviews</span>
+                            </div>
+                        </div>
+                    )
+
+                })
+
+            }
+        </section>
+    </Container>
+</section>
