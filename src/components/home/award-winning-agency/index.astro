@@ -1,0 +1,39 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS JSX COMPONENTS
+import ReadMore from "@/components/common/read-more/index.jsx"
+
+// IMPORTS ASTRO ATOMS
+import Paragraph from "@/atoms/paragraph/center/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+const data = {
+
+    description: "Thrive is a WordPress web design and SEO company with proven results.",
+    read_more: "We are passionate about using the power of the Internet to grow any business. Whether it’s growing your email marketing list or selling more products through your eCommerce website, our team brings the dedication and experience for all your digital marketing needs. Our headquarters is located in Arlington, Texas, but our clients can be found nationwide. Our capabilities encompass everything in the web design and digital marketing space, including web design and hosting, SEO, social media, PPC, content writing, email marketing and more.",
+    cover: "/hardcoded/awardimage2020.jpg"
+
+}
+
+---
+<section class="py-10 border-y border-thrive_light_gray">
+    <Container>
+        <section class="flex flex-col justify-center items-center gap-6">
+            <h2 class="text-5xl text-thrive_black font-proxima_nova font-light text-center">Award-winning digital <span class="font-extrabold">marketing agency</span></h2>
+            <div class="flex flex-col gap-1 items-center">
+                <Paragraph>{ data.description }</Paragraph>
+                <ReadMore
+                    client:load
+                    text={ data.read_more }
+                />
+            </div>
+            <PictureInternalContain
+                alternative_text=""
+                source={ data.cover }
+            />
+        </section>
+    </Container>
+</section>

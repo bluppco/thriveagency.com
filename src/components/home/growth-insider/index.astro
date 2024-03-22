@@ -1,0 +1,55 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import GrowthInsiderCard from "@/components/home/growth-insider/card/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import Paragraph from "@/atoms/paragraph/center/index.astro"
+
+const data = {
+
+    description: "Join over 3,000 subscribers who get fresh content from us on a weekly basis."
+
+}
+
+const news = Array(3).fill({
+
+    button_link: "/news/local-seo-for-multiple-locations-managing-complexity",
+    button_text: "Read More »",
+    date: "March 21, 2024",
+    description: "Following corporate guidelines while catering to local markets",
+    title: "Local SEO for Multiple Locations: Managing Complexity"
+
+})
+
+---
+<section class="py-14 bg-thrive_light_green">
+    <Container>
+        <section class="flex flex-col justify-center items-center gap-6">
+            <h2 class="text-5xl text-thrive_black font-proxima_nova font-light text-center">Thrive <span class="font-extrabold">Growth Insider</span></h2>
+            <Paragraph>{ data.description }</Paragraph>
+        </section>
+        <section class="grid grid-cols-3 gap-4 pt-12">
+            {
+
+                news.map( ( value ) => {
+
+                    return(
+                        <GrowthInsiderCard
+                            button_link={ value.button_link }
+                            button_text={ value.button_text }
+                            date={ value.date }
+                            description={ value.description }
+                            title={ value.title }
+                        />
+                    )
+
+                })
+
+            }
+        </section>
+    </Container>
+</section>

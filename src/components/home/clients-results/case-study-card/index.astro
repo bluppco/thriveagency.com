@@ -1,0 +1,48 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/link/index.astro"
+import Paragraph from "@/atoms/paragraph/index.astro"
+import PictureInternal from "@/atoms/picture/internal/left/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    button_link,
+    button_text,
+    description,
+    source,
+    statistics_one,
+    statistics_two,
+    title
+
+} = Astro.props
+
+---
+<div class="border border-thrive_light_gray/50">
+    <div class="w-full aspect-video bg-zinc-200">
+        <PictureInternal
+            alternative_text=""
+            source={ source }
+        />
+    </div>
+    <div class="bg-thrive_yellow py-3">
+        <h2 class="text-center font-proxima_nova font-extrabold text-thrive_black text-2xl">{ title }</h2>
+    </div>
+    <div class="flex justify-center items-center gap-10 pt-6">
+        <div class="border-r-2 border-thrive_light_gray/60 pr-10">
+            <p class="text-5xl font-proxima_nova font-extrabold text-thrive_green text-center">+{ statistics_one }%</p>
+            <p class="font-proxima_nova text-center">Organic Traffic</p>
+        </div>
+        <div>
+            <p class="text-5xl font-proxima_nova font-extrabold text-thrive_green text-center">+{ statistics_two }%</p>
+            <p class="font-proxima_nova text-center">Online Leads</p>
+        </div>
+    </div>
+    <div class="space-y-2 p-6">
+        <Paragraph>{ description }</Paragraph>
+        <Link href={ button_link } aria_label={ button_text }>
+            <button class="font-proxima_nova font-extrabold text-thrive_dark_green">{ button_text }</button>
+        </Link>
+    </div>
+</div>
