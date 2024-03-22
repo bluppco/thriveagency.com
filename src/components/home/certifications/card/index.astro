@@ -1,0 +1,33 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+const {
+
+    image
+
+} = Astro.props
+
+---
+<div>
+    <h3 class="text-4xl text-thrive_black font-proxima_nova font-light text-center">OUR <span class="font-extrabold">CERTIFICATIONS</span></h3>
+    <div class="flex flex-wrap justify-center gap-6 pt-12">
+        {
+
+            image?.map( ( value ) => {
+
+                return(
+                    <div class="h-16 w-fit">
+                        <PictureInternalContain
+                            alternative_text=""
+                            source={ value.file }
+                        />
+                    </div>
+                )
+
+            })
+
+        }
+    </div>
+</div>

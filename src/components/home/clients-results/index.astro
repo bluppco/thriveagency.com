@@ -1,0 +1,51 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import CaseStudyCard from "@/components/home/clients-results/case-study-card/index.astro"
+
+const data = Array(2).fill({
+
+    button_text: "Read Farah’s Case Study »",
+    button_link: "/portfolio/farah-law-firm-p-c/",
+    cover: "/hardcoded/testimonial-cover.webp",
+    description: "Thrive used SEO & PPC to increase the overall traffic to the new Farah website by +664% and along with the new CRO focused Website were able to increase online leads by over +360%.",
+    statistics_one: "664",
+    statistics_two: "360",
+    title: "“The results speak for themselves”"
+
+})
+
+---
+<section>
+    <div class="border-b border-thrive_light_gray py-10">
+        <Container>
+            <h2 class="text-5xl text-thrive_black font-proxima_nova font-light text-center">Our Clients <span class="font-extrabold">Get Results</span></h2>
+        </Container>
+    </div>
+    <Container>
+        <section class="grid grid-cols-2 gap-8 py-16">
+            {
+
+                data.map( ( value ) => {
+
+                    return(
+                        <CaseStudyCard
+                            button_link={ value.button_link }
+                            button_text={ value.button_text }
+                            description={ value.description }
+                            source={ value.cover }
+                            statistics_one={ value.statistics_one }
+                            statistics_two={ value.statistics_two }
+                            title={ value.title }
+                        />
+                    )
+
+                })
+
+            }
+        </section>
+    </Container>
+</section>
